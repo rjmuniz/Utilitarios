@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define a RelayCommand</Title>
+            <Shortcut>propcmd</Shortcut>
+            <Description>Code snippet for a property using RelayCommand</Description>
+            <Author>Ricardo Muniz</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>propertyName</ID>
+                    <ToolTip>Property Name</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+			</Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+		#region $propertyName$Command
+		private RelayCommand _$propertyName$Command;
+		public RelayCommand $propertyName$Command
+		{
+			get { 
+					if(_$propertyName$Command == null)
+					_$propertyName$Command = new RelayCommand($propertyName$);
+				return _$propertyName$Command; 
+				}    
+		}
+
+		#endregion 
+
+		private void  $propertyName$()
+		{
+		}
+
+$end$]]>
+
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

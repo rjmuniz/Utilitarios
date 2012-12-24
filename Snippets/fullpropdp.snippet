@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define a Silverlight DependencyProperty</Title>
+            <Shortcut>fullpropdp</Shortcut>
+            <Description>Code snippet for a property using DependencyProperty as the backing store for single class and collection</Description>
+            <Author>Joy</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Property Type</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+                <Literal>
+                    <ID>property</ID>
+                    <ToolTip>Property Name</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+                <Literal>
+                    <ID>ownerclass</ID>
+                    <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+                    <Default>ownerclass</Default>
+                </Literal>
+                <Literal>
+                    <ID>defaultvalue</ID>
+                    <ToolTip>The default value for this property.</ToolTip>
+                    <Default>null</Default>
+                </Literal>
+                <Literal>
+                  <ID>endOfWord</ID>
+                  <ToolTip>The end of the word.</ToolTip>
+                  <Default>o</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+#region Lista$property$
+public ObservableCollection<$type$> Lista$property$
+{
+    get { return (ObservableCollection<$type$>)GetValue(Lista$property$Property); }
+    set { SetValue(Lista$property$Property, value); }
+}
+
+// Using a DependencyProperty as the backing store for $property$.  This enables animation, styling, binding, etc...
+private static readonly DependencyProperty Lista$property$Property = 
+    DependencyProperty.Register("Lista$property$", typeof(ObservableCollection<$type$>), typeof($ownerclass$), new PropertyMetadata(new ObservableCollection<$type$>()));
+#endregion
+
+#region $property$Selecionad$endOfWord$
+public $type$ $property$Selecionad$endOfWord$
+{
+    get { return ($type$)GetValue($property$Selecionad$endOfWord$Property); }
+    set { SetValue($property$Selecionad$endOfWord$Property, value); }
+}
+
+// Using a DependencyProperty as the backing store.  This enables animation, styling, binding, etc...
+private static readonly DependencyProperty $property$Selecionad$endOfWord$Property = 
+    DependencyProperty.Register("$property$Selecionad$endOfWord$", typeof($type$), typeof($ownerclass$), new PropertyMetadata($defaultvalue$));
+#endregion
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

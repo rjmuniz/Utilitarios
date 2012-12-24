@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Cria uma Propriedade com o propertyChanged</Title>
+      <Description>Cria uma Propriedade com o propertyChanged.</Description>
+      <Author>Ricardo Muniz</Author>
+      <Shortcut>propgs</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Object>
+          <ID>NomePropriedade</ID>
+          <Type>string</Type>
+          <ToolTip>Nome da propriedade.</ToolTip>
+          <Default>Propriedade</Default>
+        </Object>>
+        <Object>
+          <ID>TipoPropriedade</ID>
+          <Type>System.Type</Type>
+          <ToolTip>Tipo da propriedade.</ToolTip>
+          <Default>string</Default>
+        </Object>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        #region $NomePropriedade$
+        private $TipoPropriedade$ _$NomePropriedade$;
+        public $TipoPropriedade$ $NomePropriedade$
+        {
+            get
+            {
+                return _$NomePropriedade$;
+            }
+            set
+            {
+                if (_$NomePropriedade$ != value)
+                {
+                    _$NomePropriedade$ = value;
+                    OnPropertyChanged("$NomePropriedade$");
+                }
+            }
+        }
+        #endregion
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

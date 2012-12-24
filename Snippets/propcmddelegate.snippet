@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Define a DelegateCommand</Title>
+            <Shortcut>propcmddelegate</Shortcut>
+            <Description>Code snippet for a property using ICommand</Description>
+            <Author>Ricardo Muniz</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>propertyName</ID>
+                    <ToolTip>Property Name</ToolTip>
+                    <Default>DoAction</Default>
+                </Literal>
+				<Literal>
+                    <ID>typeName</ID>
+                    <ToolTip>Property Type</ToolTip>
+                    <Default>object</Default>
+                </Literal>              
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+		#region $propertyName$Command
+		private DelegateCommand<$typeName$> _$propertyName$Command;
+		public DelegateCommand<$typeName$> $propertyName$Command
+		{
+			get { 
+					if(_$propertyName$Command == null)
+					_$propertyName$Command = new DelegateCommand<$typeName$>($propertyName$);
+				return _$propertyName$Command; 
+				}    
+		}
+
+		#endregion 
+
+		private void  $propertyName$($typeName$ selectedItem)
+		{
+
+		}
+
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
