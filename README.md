@@ -1,3 +1,6 @@
-Contém facilitadores para o visual studio
---ControlKMais 
-  é um add in (macro) que identa remove os usings com um comando só.
+Utilitários
+===========
+
+ - Contém alguns snippets para silverlight
+
+ - ControlKMais - é um add-in (macro) que roda no visual studio, que quando executado: colapsa o código, identa e remove os usings com um comando só.
